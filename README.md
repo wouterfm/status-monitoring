@@ -20,4 +20,4 @@ Ensure you have a Telegram Bot + API token, and a channel where this bot is a me
 
 ## Watchlist
 
-The server checks each item defined in the `watchlist` (src/watchlist.ts) variable, this happens every 15 seconds.
+The server checks each item defined in the `watchlist` variable (src/watchlist.ts), this happens every 15 seconds.
