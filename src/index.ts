@@ -2,7 +2,7 @@ import { CronJob } from "cron";
 import { downTimeMinutes } from "./utils/calculations";
 import { httpCheck, pingCheck } from "./utils/checkers";
 import { publishToTelegramChannel, telegramChannelMessage } from "./utils/telegram";
-import { watchlist } from "./watchlist";
+import { watchList } from "./watchlist";
 
 const activeIssues = new Map<string, Date>();
 const last24hStats = {
@@ -60,7 +60,7 @@ export async function statusCheck(item: WatchListItem, fn: (target: string) => P
 }
 
 async function watcher(): Promise<void> {
-    for (const item of watchlist) {
+    for (const item of watchList) {
         if (item.type === "http") {
             await statusCheck(item, httpCheck);
         }
