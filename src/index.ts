@@ -46,16 +46,8 @@ export async function statusCheck(item: WatchListItem, fn: (target: string) => P
                 service: item.name
             }));
         };
-    } catch {
-        if (!activeIssues.has(item.target)) {
-            activeIssues.set(item.target, new Date());
-            last24hStats.issues++;
-
-            await publishToTelegramChannel(telegramChannelMessage.down({
-                date: new Date(),
-                service: item.name
-            }));
-        };
+    } catch (e) {
+        console.log({ statusCheckError: e })
     }
 }
 
