@@ -90,6 +90,7 @@ CronJob.from({
 
 (async () => {
     console.log("Monitoring Started 👀")
+    await watcher()
     await publishToTelegramChannel(telegramChannelMessage.started({
         date: new Date()
     }));
